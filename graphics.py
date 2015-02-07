@@ -80,18 +80,23 @@ class CourseView(object):
     height = 25
 
     def __init__(self, course):
-         self.x = (int(course.course_number) % 1000) + 10+(int(course.course_number)%100)*4
-         self.y = (int(course.course_number) % 10)*70 + 100
+#       self.x = (int(course.course_number) %10000)/10 + (int(course.course_number)%1000)/4- (3*int(course.course_number%100))
+         self.x=random.randint(30,1540)
+         self.y = (int(course.course_number) % 1000)-40
          self.x2 = self.x + CourseView.width
          self.y2 = self.y + CourseView.height
+         self.x1=  self.x - CourseView.width
+         self.y1 = self.y - CourseView.height
+
+         
          self.course = course
          self.isLighted = False
 
     def displayCirc(self,canvas):
         if (self.isLighted):
-            canvas.create_oval(self.x, self.y,self.x2,self.y2,fill="Yellow")
+            canvas.create_oval(self.x1, self.y1,self.x2,self.y2,fill="Yellow")
         else:
-            canvas.create_oval(self.x, self.y,self.x2,self.y2,fill="Blue")
+            canvas.create_oval(self.x1, self.y1,self.x2,self.y2,fill="Blue")
         
     def displayEdges(self, canvas):
         for prereq in self.course.requisites:
@@ -105,11 +110,15 @@ class CourseView(object):
         self.isLighted = True
         for prereq in self.course.requisites:
             if prereq in courseViewDict:
+                print self.course.course_number
+                print prereq
                 courseview = courseViewDict[prereq]
-                courseview.lightUp()
+                if not courseview.isLighted:
+                    courseview.lightUp()
 
 courseViewDict = {}
 for (key, value) in courses.course_dictionary.items():
-    courseViewDict[key] = CourseView(value)
+    if (str(key)[0:2] == "18"):
+        courseViewDict[key] = CourseView(value)
 
 Animation().run()
