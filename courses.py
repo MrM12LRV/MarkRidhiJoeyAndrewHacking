@@ -13,7 +13,7 @@ class Course(object):
     def __init__(self, coursenumber):
         self.course_number = coursenumber
         self.name = courses[coursenumber]['name']
-        self.requsities = courses[coursenumber]['requisites']
+        self.requisites = courses[coursenumber]['requisites']
         self.inFall = False
         self.inSpring = False
 
