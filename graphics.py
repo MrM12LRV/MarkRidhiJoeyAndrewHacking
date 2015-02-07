@@ -11,15 +11,17 @@ class Animation(object):
     # Override these methods when creating your own animation
     def rightMousePressed(self, event):
         lighted = False
-        for(key, courseObj) in courseViewDict.items():
+        for (key, courseObj) in courseViewDict.items():
             if((courseObj.x+20>event.x) and (courseObj.x-20<event.x)) and\
                ((courseObj.y+20>event.y) and (courseObj.y-20<event.y)):
                courseObj.lightUp()
+               courseObj.redraw(self.canvas)
                lighted = True
         if (not lighted):
             for (key, courseObj) in courseViewDict.items():
-                courseObj.isLighted = False
-        self.redrawAll()
+                if (courseObj.isLighted):
+                     courseObj.isLighted = False
+                     courseObj.redraw(self.canvas)
         
     def leftMousePressed(self,event):
         for(key, courseObj) in courseViewDict.items():
@@ -27,7 +29,7 @@ class Animation(object):
                ((courseObj.y+20>event.y) and (courseObj.y-20<event.y)):
                 self.selected_course = courseObj
                 courseObj.updateXY(event.x, event.y)
-        self.redrawAll()
+                courseObj.redraw(self.canvas)
 
     def leftMouseMoved(self,event):
         self.selected_course.updateXY(event.x, event.y)
@@ -87,10 +89,11 @@ class CourseView(object):
         self.y2 = self.y + CourseView.height
         self.x1 = self.x - CourseView.width
         self.y1 = self.y - CourseView.height
+        self.course_object_id = None
+        self.course_text_id = None
         
         self.course = course
         self.isLighted = False
-        self.drag = False
          
     def updateXY(self,x,y):
         self.x = x
@@ -100,39 +103,50 @@ class CourseView(object):
         self.x1 = self.x - CourseView.width
         self.y1 = self.y - CourseView.height
 
-    def displayCirc(self,canvas):
+    def redraw(self, canvas):
+        self.displayEdges(canvas)
+        self.displayCirc(canvas)
+        self.displayCourseNum(canvas)
+
+    def displayCirc(self, canvas):
+        if (self.course_object_id != None):
+            canvas.delete(self.course_object_id)
         if (self.isLighted):
-            canvas.create_oval(self.x1, self.y1,self.x2,self.y2,fill="Yellow")
+            self.course_object_id = canvas.create_oval(self.x1, self.y1,self.x2,self.y2,fill="Yellow")
         else:
-            canvas.create_oval(self.x1, self.y1,self.x2,self.y2,fill="Blue")
+            self.course_object_id = canvas.create_oval(self.x1, self.y1,self.x2,self.y2,fill="Blue")
         
     def displayEdges(self, canvas):
         for prereq in self.course.requisites:
             if (prereq in courseViewDict):
                 prereqView = courseViewDict[prereq]
                 if(self.isLighted):
-                 canvas.create_line(self.x, self.y, prereqView.x, prereqView.y,fill="Dark Green",width=8)
+                    canvas.create_line(self.x, self.y, prereqView.x, prereqView.y,fill="Dark Green",width=8)
                 else:
-                 canvas.create_line(self.x, self.y, prereqView.x, prereqView.y)
+                    canvas.create_line(self.x, self.y, prereqView.x, prereqView.y)
+                
+    
     def displayCourseNum(self,canvas):
+        if (self.course_text_id != None):
+            canvas.delete(self.course_text_id)
         if (self.isLighted==True):
-            canvas.create_text(self.x,self.y,text=str(int(self.course.course_number)),font="Arial 20")
+            self.course_text_id = canvas.create_text(self.x,self.y,text=str(int(self.course.course_number)),font="Arial 20")
         else:
-            canvas.create_text(self.x,self.y,text=str(int(self.course.course_number)),font="Arial")
+            self.course_text_id = canvas.create_text(self.x,self.y,text=str(int(self.course.course_number)),font="Arial")
     
     def lightUp(self):
         self.isLighted = True
         for prereq in self.course.requisites:
             if prereq in courseViewDict:
-                #print self.course.course_number
-                #print prereq
                 courseview = courseViewDict[prereq]
-                if not courseview.isLighted:
+                if (not courseview.isLighted):
                     courseview.lightUp()
 
 courseViewDict = {}
+edgeViewDict = {}
 for (key, value) in courses.course_dictionary.items():
     if (str(key)[0:2] == "18"):
         courseViewDict[key] = CourseView(value)
+        edgeViewDict[key] = []
 
 Animation().run()
