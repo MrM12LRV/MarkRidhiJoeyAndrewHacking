@@ -19,16 +19,39 @@ class Animation(object):
             for (key, courseObj) in courseViewDict.items():
                 courseObj.isLighted = False
         self.redrawAll()
+        
+    def leftMousePressed(self,event):
+        for(key, courseObj) in courseViewDict.items():
+            if((courseObj.x+20>event.x) and (courseObj.x-20<event.x)) and\
+               ((courseObj.y+20>event.y) and (courseObj.y-20<event.y)):
+                courseObj.drag=True
+            if(courseObj.drag):
+                courseObj.updateXY(event.x, event.y)
+        self.redrawAll()
+
+    def leftMouseReleased(self,event):
+        for(key, courseObj) in courseViewDict.items():
+            courseObj.drag = False
+        self.redrawAll()
+        
+        
+                
+                
+        
+        
+        
+        
     
     def mouseEntered(self, event):
         for(key, courseObj) in courseViewDict.items():
             if((courseObj.x+25>event.x) and (courseObj.x-25<event.x)) and\
                ((courseObj.y+25>event.y) and (courseObj.y-25<event.y)):
                courseObj.lightUp()
+               
     
     def keyPressed(self, event): pass
     
-    def timerFired(self): pass
+    def timerFired(self): self.redrawAll()
     
     def init(self): pass
     
@@ -59,8 +82,16 @@ class Animation(object):
         def keyPressedWrapper(event):
             self.keyPressed(event)
             redrawAllWrapper()
-        root.bind("<Button-1>", mousePressedWrapper)
+        def leftMousePressed(event):
+            self.leftMousePressed(event)
+            redrawAllWrapper()
+        def leftMouseReleased(event):
+            self.leftMouseReleased(event)
+            redrawAllWrapper()
+        root.bind("<Button-3>", mousePressedWrapper)
         root.bind("<Key>", keyPressedWrapper)
+        root.bind("<Button-1>",leftMousePressed)
+        root.bind("<B1-ButtonRelease>",leftMouseReleased)
         # set up timerFired events
         self.timerFiredDelay = 250 # milliseconds
         def timerFiredWrapper():
@@ -81,7 +112,7 @@ class CourseView(object):
 
     def __init__(self, course):
 #       self.x = (int(course.course_number) %10000)/10 + (int(course.course_number)%1000)/4- (3*int(course.course_number%100))
-         self.x=random.randint(30,1540)
+         self.x = random.randint(30,1540)
          self.y = (int(course.course_number) % 1000)-40
          self.x2 = self.x + CourseView.width
          self.y2 = self.y + CourseView.height
@@ -91,6 +122,11 @@ class CourseView(object):
          
          self.course = course
          self.isLighted = False
+         self.drag = False
+         
+    def updateXY(self,x,y):
+        self.x = x
+        self.y = y
 
     def displayCirc(self,canvas):
         if (self.isLighted):
@@ -102,16 +138,22 @@ class CourseView(object):
         for prereq in self.course.requisites:
             if (prereq in courseViewDict):
                 prereqView = courseViewDict[prereq]
-                canvas.create_line(self.x, self.y, prereqView.x, prereqView.y)
+                if(self.isLighted):
+                 canvas.create_line(self.x, self.y, prereqView.x, prereqView.y,fill="Dark Green",width=8)
+                else:
+                 canvas.create_line(self.x, self.y, prereqView.x, prereqView.y)
     def displayCourseNum(self,canvas):
-        canvas.create_text(self.x,self.y,text=str(int(self.course.course_number)),font="Arial")
+        if (self.isLighted==True):
+            canvas.create_text(self.x,self.y,text=str(int(self.course.course_number)),font="Arial 20")
+        else:
+            canvas.create_text(self.x,self.y,text=str(int(self.course.course_number)),font="Arial")
     
     def lightUp(self):
         self.isLighted = True
         for prereq in self.course.requisites:
             if prereq in courseViewDict:
-                print self.course.course_number
-                print prereq
+                #print self.course.course_number
+                #print prereq
                 courseview = courseViewDict[prereq]
                 if not courseview.isLighted:
                     courseview.lightUp()
