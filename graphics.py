@@ -13,7 +13,7 @@ class Animation(object):
     def timerFired(self): pass
     def init(self): pass
     def redrawAll(self):
-            view(courseList)
+         view(courseViewList)
     
     # Call app.run(width,height) to get your app started
     def run(self, width=1000, height=1000):
@@ -50,41 +50,34 @@ class Animation(object):
         # and launch the app
         root.mainloop()  # This call BLOCKS (so your program waits until you close the window!)
 
-class  course(object):
-    def init(self,  name, preReqs):
-         self.x = (int(name) % 1000) + 10
-         self.y = (int(name) % 10)*40 + 100  # coordinates of center
-         self.courseNo = name      # course number
-         self.preReqs = preReqs
+class CourseView(object):
+
+    def __init__(self, course):
+         self.x = (int(course.course_number) % 1000) + 10
+         self.y = (int(course.course_number) % 10)*40 + 100  # coordinates of center
+         self.course = course
 
     def displayCirc(self):
         create_oval(x-5,y-5,x+5,y+5,fill="Blue")
         
     
-    def start(andrew):
-        # Andrew is giving us [(c1,[...]), (c2,[...]), ...]
-        courseList = []
-
-        for i in xrange(len(andrew)):
-            courseList.append(course(andrew[i][0],andrew[i][1]))
+#    def start():
+#        calcEdges(courseList)
+#        view(courseList)
 
 
-        calcEdges(courseList)
-        view(courseList)
+def view(courseViewList):
+    for courseObj in courseViewList:
+        courseObj.displayCirc()
 
+def calcEdges(courseViewList):
+    for courseObj in courseViewList:
+        prereqList = courseObj.preReqs
+        for preReq in PrereqList:
+            drawLine(courseObj.x,courseObj.y,preReq.x,preReq.y)
 
-    def view(courseList):
-        for courseObj in courseList:
-            courseObj.displayCirc()
+courseViewList = []
+for (key, value) in courses.course_dictionary.items():
+    courseViewList.append(CourseView(value))
 
-    def calcEdges(courseList):
-        for courseObj in courseList:
-            prereqList = courseObj.preReqs
-            for preReq in PrereqList:
-                drawLine(courseObj.x,courseObj.y,preReq.x,preReq.y)
-
-        
-        
-#start([(15122,[15112]),(15112,[]),(15213,[15122])])
-#Animation.run()
-print courses.course_dictionary[18447].name
+Animation().run()
