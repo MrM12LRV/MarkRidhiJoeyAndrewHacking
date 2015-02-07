@@ -9,21 +9,26 @@ root = Tk()
 class Animation(object):
     # Override these methods when creating your own animation
     def mousePressed(self, event):
+        lighted = False
         for(key, courseObj) in courseViewDict.items():
             if((courseObj.x+20>event.x) and (courseObj.x-20<event.x)) and\
                ((courseObj.y+20>event.y) and (courseObj.y-20<event.y)):
                courseObj.lightUp()
+               lighted = True
+        if (not lighted):
+            for (key, courseObj) in courseViewDict.items():
+                courseObj.isLighted = False
+        self.redrawAll()
     
     def mouseEntered(self, event):
         for(key, courseObj) in courseViewDict.items():
-            if((courseObj.x+20>event.x) and (courseObj.x-20<event.x)) and\
-               ((courseObj.y+20>event.y) and (courseObj.y-20<event.y)):
+            if((courseObj.x+25>event.x) and (courseObj.x-25<event.x)) and\
+               ((courseObj.y+25>event.y) and (courseObj.y-25<event.y)):
                courseObj.lightUp()
     
     def keyPressed(self, event): pass
     
-    def timerFired(self):
-        self.redrawAll()
+    def timerFired(self): pass
     
     def init(self): pass
     
@@ -98,6 +103,10 @@ class CourseView(object):
     
     def lightUp(self):
         self.isLighted = True
+        for prereq in self.course.requisites:
+            if prereq in courseViewDict:
+                courseview = courseViewDict[prereq]
+                courseview.lightUp()
 
 courseViewDict = {}
 for (key, value) in courses.course_dictionary.items():
