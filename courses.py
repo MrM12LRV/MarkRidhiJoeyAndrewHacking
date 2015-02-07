@@ -1,8 +1,8 @@
 import apis
-import pickle
+import cPickle
 
 # dictionary from coursenumber to {name, requisites}
-courses = pickle.load(open("COURSE_DICTIONARY", "rb"))
+courses = cPickle.load(open("COURSE_DICTIONARY", "rb"))
 
 APP_ID = "497344e6-8142-4f80-8074-d1161133a002"
 SECRET_KEY = "8jTm1V9cvkvV_YUWMJBq7iIvSOzpD7M8fY9mTafkmnq5YmDRm6AkEYeI"
@@ -19,5 +19,4 @@ class Course(object):
 
 course_dictionary = dict()
 for coursenumber in courses.keys():
-    print coursenumber
     course_dictionary[coursenumber] = Course(coursenumber)

@@ -2,6 +2,7 @@ from Tkinter import*
 import random
 import copy
 import time
+import courses
 
 edgeList = set()
 
@@ -49,40 +50,41 @@ class Animation(object):
         # and launch the app
         root.mainloop()  # This call BLOCKS (so your program waits until you close the window!)
 
-class  course(objects):
-     def init(self,  name, preReqs):
+class  course(object):
+    def init(self,  name, preReqs):
          self.x = (int(name) % 1000) + 10
          self.y = (int(name) % 10)*40 + 100  # coordinates of center
          self.courseNo = name      # course number
          self.preReqs = preReqs
 
-     def displayCirc(self):
+    def displayCirc(self):
         create_oval(x-5,y-5,x+5,y+5,fill="Blue")
         
-      
-def start(andrew):
-    # Andrew is giving us [(c1,[...]), (c2,[...]), ...]
-    courseList = []
+    
+    def start(andrew):
+        # Andrew is giving us [(c1,[...]), (c2,[...]), ...]
+        courseList = []
 
-    for i in xrange(len(andrew)):
-        courseList.append(course(andrew[i][0],andrew[i][1]))
-
-
-    calcEdges(courseList)
-    view(courseList)
+        for i in xrange(len(andrew)):
+            courseList.append(course(andrew[i][0],andrew[i][1]))
 
 
-def view(courseList):
-    for courseObj in courseList:
-        courseObj.displayCirc()
+        calcEdges(courseList)
+        view(courseList)
 
-def calcEdges(courseList):
-    for courseObj in courseList:
-        prereqList = courseObj.preReqs
-        for preReq in PrereqList:
-            drawLine(courseObj.x,courseObj.y,preReq.x,preReq.y)
+
+    def view(courseList):
+        for courseObj in courseList:
+            courseObj.displayCirc()
+
+    def calcEdges(courseList):
+        for courseObj in courseList:
+            prereqList = courseObj.preReqs
+            for preReq in PrereqList:
+                drawLine(courseObj.x,courseObj.y,preReq.x,preReq.y)
 
         
         
-start([(15122,[15112]),(15112,[]),(15213,[15122])])
-Animation.run()
+#start([(15122,[15112]),(15112,[]),(15213,[15122])])
+#Animation.run()
+print courses.course_dictionary[18447].name
