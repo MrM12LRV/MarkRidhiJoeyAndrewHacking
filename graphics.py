@@ -5,7 +5,7 @@ import time
 import courses
 
 edgeList = set()
-
+root = Tk()
 class Animation(object):
     # Override these methods when creating your own animation
     def mousePressed(self, event): pass
@@ -13,12 +13,13 @@ class Animation(object):
     def timerFired(self): pass
     def init(self): pass
     def redrawAll(self):
-         view(courseViewList)
+        for (key, courseObj) in courseViewList.items():
+            courseObj.displayCirc(self.canvas)    
     
     # Call app.run(width,height) to get your app started
     def run(self, width=1000, height=1000):
         # create the root and the canvas
-        root = Tk()
+        #root = Tk()
         root.title("Schedule Bot")
         self.window=root
         self.width = width
@@ -50,34 +51,23 @@ class Animation(object):
         # and launch the app
         root.mainloop()  # This call BLOCKS (so your program waits until you close the window!)
 
-class CourseView(object):
+class CourseView(Animation):
 
     def __init__(self, course):
          self.x = (int(course.course_number) % 1000) + 10
          self.y = (int(course.course_number) % 10)*40 + 100  # coordinates of center
          self.course = course
 
-    def displayCirc(self):
-        create_oval(x-5,y-5,x+5,y+5,fill="Blue")
+    def displayCirc(self,canvas):
+        canvas.create_oval(self.x-5,self.y-5,self.x+5,self.y+5,fill="Blue")
         
-    
-#    def start():
-#        calcEdges(courseList)
-#        view(courseList)
+    def displayEdges(self, canvas):
+        for prereq in self.course.requisites:
+            prereqView = courseViewList[prereq]
+            canvas.drawLine(self.x, self.y, prereqView.x, prereqView.y)
 
-
-def view(courseViewList):
-    for courseObj in courseViewList:
-        courseObj.displayCirc()
-
-def calcEdges(courseViewList):
-    for courseObj in courseViewList:
-        prereqList = courseObj.preReqs
-        for preReq in PrereqList:
-            drawLine(courseObj.x,courseObj.y,preReq.x,preReq.y)
-
-courseViewList = []
+courseViewList = {}
 for (key, value) in courses.course_dictionary.items():
-    courseViewList.append(CourseView(value))
+    courseViewList[key] = CourseView(value)
 
 Animation().run()
