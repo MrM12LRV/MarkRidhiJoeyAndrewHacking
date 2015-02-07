@@ -7,8 +7,9 @@ import courses
 edgeList = set()
 root = Tk()
 class Animation(object):
+
     # Override these methods when creating your own animation
-    def mousePressed(self, event):
+    def rightMousePressed(self, event):
         lighted = False
         for(key, courseObj) in courseViewDict.items():
             if((courseObj.x+20>event.x) and (courseObj.x-20<event.x)) and\
@@ -24,38 +25,26 @@ class Animation(object):
         for(key, courseObj) in courseViewDict.items():
             if((courseObj.x+20>event.x) and (courseObj.x-20<event.x)) and\
                ((courseObj.y+20>event.y) and (courseObj.y-20<event.y)):
-                courseObj.drag=True
-            if(courseObj.drag):
+                self.selected_course = courseObj
                 courseObj.updateXY(event.x, event.y)
         self.redrawAll()
 
-    def leftMouseReleased(self,event):
-        for(key, courseObj) in courseViewDict.items():
-            courseObj.drag = False
+    def leftMouseMoved(self,event):
+        self.selected_course.updateXY(event.x, event.y)
         self.redrawAll()
-        
-        
-                
-                
-        
-        
-        
-        
     
-    def mouseEntered(self, event):
-        for(key, courseObj) in courseViewDict.items():
-            if((courseObj.x+25>event.x) and (courseObj.x-25<event.x)) and\
-               ((courseObj.y+25>event.y) and (courseObj.y-25<event.y)):
-               courseObj.lightUp()
-               
+    def leftMouseReleased(self,event):
+        self.selected_course = None
     
     def keyPressed(self, event): pass
     
-    def timerFired(self): self.redrawAll()
+    def timerFired(self): pass
     
-    def init(self): pass
+    def init(self):
+        self.redrawAll()
     
     def redrawAll(self):
+        self.canvas.delete(ALL)
         for (key, courseObj) in courseViewDict.items():
             courseObj.displayEdges(self.canvas)
         for (key,courseObj) in courseViewDict.items():
@@ -72,37 +61,17 @@ class Animation(object):
         self.height = height
         self.canvas = Canvas(root, width=width, height=height)
         self.canvas.pack()
+        
         # set up events
-        def redrawAllWrapper():
-            self.canvas.delete(ALL)
-            self.redrawAll()
-        def mousePressedWrapper(event):
-            self.mousePressed(event)
-            redrawAllWrapper()
-        def keyPressedWrapper(event):
-            self.keyPressed(event)
-            redrawAllWrapper()
-        def leftMousePressed(event):
-            self.leftMousePressed(event)
-            redrawAllWrapper()
-        def leftMouseReleased(event):
-            self.leftMouseReleased(event)
-            redrawAllWrapper()
-        root.bind("<Button-3>", mousePressedWrapper)
-        root.bind("<Key>", keyPressedWrapper)
-        root.bind("<Button-1>",leftMousePressed)
-        root.bind("<B1-ButtonRelease>",leftMouseReleased)
-        # set up timerFired events
+        root.bind("<Button-1>", self.leftMousePressed)
+        root.bind("<B1-Motion>", self.leftMouseMoved)
+        root.bind("<ButtonRelease-1>", self.leftMouseReleased)
+        root.bind("<Button-3>", self.rightMousePressed)
+        root.bind("<Key>", self.keyPressed)
         self.timerFiredDelay = 250 # milliseconds
-        def timerFiredWrapper():
-            self.timerFired()
-            redrawAllWrapper()
-            # pause, then call timerFired again
-            self.canvas.after(self.timerFiredDelay, timerFiredWrapper)
-        # init and get timerFired running
+        self.canvas.after(self.timerFiredDelay, self.timerFired)
+        
         self.init()
-        timerFiredWrapper()
-        # and launch the app
         root.mainloop()  # This call BLOCKS (so your program waits until you close the window!)
 
 class CourseView(object):
@@ -111,22 +80,25 @@ class CourseView(object):
     height = 25
 
     def __init__(self, course):
-#       self.x = (int(course.course_number) %10000)/10 + (int(course.course_number)%1000)/4- (3*int(course.course_number%100))
-         self.x = random.randint(30,1540)
-         self.y = (int(course.course_number) % 1000)-40
-         self.x2 = self.x + CourseView.width
-         self.y2 = self.y + CourseView.height
-         self.x1=  self.x - CourseView.width
-         self.y1 = self.y - CourseView.height
-
-         
-         self.course = course
-         self.isLighted = False
-         self.drag = False
+        #self.x = (int(course.course_number) %10000)/10 + (int(course.course_number)%1000)/4- (3*int(course.course_number%100))
+        self.x = random.randint(30,1540)
+        self.y = (int(course.course_number) % 1000)-40
+        self.x2 = self.x + CourseView.width
+        self.y2 = self.y + CourseView.height
+        self.x1 = self.x - CourseView.width
+        self.y1 = self.y - CourseView.height
+        
+        self.course = course
+        self.isLighted = False
+        self.drag = False
          
     def updateXY(self,x,y):
         self.x = x
         self.y = y
+        self.x2 = self.x + CourseView.width
+        self.y2 = self.y + CourseView.height
+        self.x1 = self.x - CourseView.width
+        self.y1 = self.y - CourseView.height
 
     def displayCirc(self,canvas):
         if (self.isLighted):
