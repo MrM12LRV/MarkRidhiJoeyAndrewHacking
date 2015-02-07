@@ -1,0 +1,1278 @@
+(dp0
+I18432
+(dp1
+S'requisites'
+p2
+(lp3
+sS'name'
+p4
+S'18-432 Senior Projects'
+p5
+ssI15369
+(dp6
+g2
+(lp7
+I21241
+aI15122
+asg4
+S'15-369 Special Topics: Perceptual Computing'
+p8
+ssI15883
+(dp9
+g2
+(lp10
+sg4
+S'15-883 Computational Models of Neural Systems'
+p11
+ssI18447
+(dp12
+g2
+(lp13
+I18240
+aI18243
+aI18340
+aI18213
+aI18348
+aI15213
+aI18349
+aI18320
+aI18341
+asg4
+S'18-447 Introduction to Computer Architecture'
+p14
+ssI18450
+(dp15
+g2
+(lp16
+I18391
+asg4
+S'18-450 Digital Communications'
+p17
+ssI15381
+(dp18
+g2
+(lp19
+I15122
+aI15211
+asg4
+S'15-381 Artificial Intelligence: Representation and Problem Solving'
+p20
+ssI15383
+(dp21
+g2
+(lp22
+I15121
+aI15122
+asg4
+S'15-383 Introduction to Text Processing'
+p23
+ssI15385
+(dp24
+g2
+(lp25
+I21241
+aI15122
+asg4
+S'15-385 Introduction to Computer Vision'
+p26
+ssI15386
+(dp27
+g2
+(lp28
+I15112
+aI21122
+asg4
+S'15-386 Neural Computation'
+p29
+ssI15387
+(dp30
+g2
+(lp31
+I15112
+aI21241
+aI21122
+asg4
+S'15-387 Computational Perception'
+p32
+ssI15390
+(dp33
+g2
+(lp34
+sg4
+S'15-390 Entrepreneurship for Computer Science'
+p35
+ssI15392
+(dp36
+g2
+(lp37
+I15213
+asg4
+S'15-392 Special Topic: Secure Programming'
+p38
+ssI18431
+(dp39
+g2
+(lp40
+sg4
+S'18-431 Undergraduate Projects - Senior'
+p41
+ssI18472
+(dp42
+g2
+(lp43
+I18202
+aI33107
+asg4
+S'18-472 Fundamentals of Electric Power Systems'
+p44
+ssI18474
+(dp45
+g2
+(lp46
+I18370
+aI18243
+aI18396
+aI15213
+asg4
+S'18-474 Embedded Control Systems'
+p47
+ssI15405
+(dp48
+g2
+(lp49
+I15410
+asg4
+S'15-405 Engineering Distributed Systems'
+p50
+ssI18525
+(dp51
+g2
+(lp52
+I18340
+aI18341
+aI18310
+aI18415
+aI18320
+aI18450
+aI18491
+asg4
+S'18-525 Integrated Circuit Design Project'
+p53
+ssI15410
+(dp54
+g2
+(lp55
+I15213
+asg4
+S'15-410 Operating System Design and Implementation'
+p56
+ssI15411
+(dp57
+g2
+(lp58
+I15213
+asg4
+S'15-411 Compiler Design'
+p59
+ssI15412
+(dp60
+g2
+(lp61
+I15410
+asg4
+S'15-412 Operating System Practicum'
+p62
+ssI15413
+(dp63
+g2
+(lp64
+sg4
+S'15-413 Software Engineering Practicum'
+p65
+ssI15414
+(dp66
+g2
+(lp67
+I15122
+aI15211
+aI15251
+asg4
+S'15-414 Bug Catching: Automated Program Verification and Testing'
+p68
+ssI15415
+(dp69
+g2
+(lp70
+I15210
+aI15211
+aI15213
+asg4
+S'15-415 Database Applications'
+p71
+ssI15417
+(dp72
+g2
+(lp73
+I15312
+aI15317
+asg4
+S'15-417 HOT Compilation'
+p74
+ssI15418
+(dp75
+g2
+(lp76
+I15213
+asg4
+S'15-418 Parallel Computer Architecture and Programming'
+p77
+ssI18491
+(dp78
+g2
+(lp79
+I18290
+asg4
+S'18-491 Fundamentals of Signal Processing'
+p80
+ssI15421
+(dp81
+g2
+(lp82
+I15122
+aI15211
+asg4
+S'15-421 Information Security and Privacy'
+p83
+ssI15424
+(dp84
+g2
+(lp85
+I21241
+aI15122
+aI15251
+aI18202
+aI21122
+asg4
+S'15-424 Foundations of Cyber-Physical Systems'
+p86
+ssI18499
+(dp87
+g2
+(lp88
+sg4
+S'18-499 Internship'
+p89
+ssI15437
+(dp90
+g2
+(lp91
+I15214
+asg4
+S'15-437 Web Application Development'
+p92
+ssI18510
+(dp93
+g2
+(lp94
+I18401
+aI18402
+aI18310
+aI18320
+aI18419
+aI18421
+aI18491
+aI18300
+asg4
+S'18-510 Sensor Systems Design'
+p95
+ssI15440
+(dp96
+g2
+(lp97
+I15213
+asg4
+S'15-440 Distributed Systems'
+p98
+ssI15441
+(dp99
+g2
+(lp100
+I15213
+asg4
+S'15-441 Computer Networks'
+p101
+ssI15449
+(dp102
+g2
+(lp103
+I15410
+asg4
+S'15-449 Engineering Distributed Systems'
+p104
+ssI15451
+(dp105
+g2
+(lp106
+I21241
+aI15210
+aI15251
+asg4
+S'15-451 Algorithm Design and Analysis'
+p107
+ssI15453
+(dp108
+g2
+(lp109
+I15251
+aI21228
+asg4
+S'15-453 Formal Languages, Automata, and Computability'
+p110
+ssI15455
+(dp111
+g2
+(lp112
+I15251
+asg4
+S'15-455 Undergraduate Complexity Theory'
+p113
+ssI15456
+(dp114
+g2
+(lp115
+I15451
+asg4
+S'15-456 Computational Geometry'
+p116
+ssI15462
+(dp117
+g2
+(lp118
+I18213
+aI21259
+aI15213
+aI21240
+aI21241
+aI18202
+asg4
+S'15-462 Computer Graphics'
+p119
+ssI15463
+(dp120
+g2
+(lp121
+I21241
+aI18202
+aI15213
+asg4
+S'15-463 Computational Photography'
+p122
+ssI15464
+(dp123
+g2
+(lp124
+I15462
+asg4
+S'15-464 Technical Animation'
+p125
+ssI15465
+(dp126
+g2
+(lp127
+I15462
+asg4
+S'15-465 Animation Art and Technology'
+p128
+ssI15466
+(dp129
+g2
+(lp130
+I15462
+asg4
+S'15-466 Computer Game Programming'
+p131
+ssI18540
+(dp132
+g2
+(lp133
+I18370
+aI18340
+aI18341
+aI18348
+aI18349
+aI18320
+aI18491
+asg4
+S'18-540 Rapid Prototyping of Computer Systems'
+p134
+ssI18545
+(dp135
+g2
+(lp136
+I18348
+aI18349
+aI18340
+aI18341
+aI18447
+asg4
+S'18-545 Advanced Digital Design Project'
+p137
+ssI18549
+(dp138
+g2
+(lp139
+I18370
+aI18348
+aI18349
+aI18447
+aI18320
+aI15410
+aI18491
+asg4
+S'18-549 Embedded Systems Design'
+p140
+ssI18551
+(dp141
+g2
+(lp142
+I18496
+aI18370
+aI18491
+aI18348
+aI18349
+asg4
+S'18-551 Digital Communication and Signal Processing Systems Design'
+p143
+ssI15486
+(dp144
+g2
+(lp145
+I21241
+aI18202
+aI15212
+asg4
+S'15-486 Artificial Neural Networks'
+p146
+ssI15491
+(dp147
+g2
+(lp148
+I15122
+asg4
+S'15-491 Special Topic: CMRoboBits: Creating Intelligent Robots'
+p149
+ssI15492
+(dp150
+g2
+(lp151
+I15122
+asg4
+S'15-492 Special Topic: Speech Processing'
+p152
+ssI15494
+(dp153
+g2
+(lp154
+I15213
+asg4
+S'15-494 Special Topic: Cognitive Robotics'
+p155
+ssI15128
+(dp156
+g2
+(lp157
+sg4
+S'15-128 Freshman Immigration Course'
+p158
+ssI18578
+(dp159
+g2
+(lp160
+I18320
+aI15313
+aI18370
+aI18348
+aI18349
+asg4
+S'18-578 Mechatronic Design'
+p161
+ssI18418
+(dp162
+g2
+(lp163
+I18220
+asg4
+S'18-418 Electric Energy Processing: Fundamentals and Applications'
+p164
+ssI18715
+(dp165
+g2
+(lp166
+I18300
+asg4
+S'18-715 Physics of Applied Magnetism'
+p167
+ssI18090
+(dp168
+g2
+(lp169
+sg4
+S'18-090 Introduction to Signal Processing for Creative Practice'
+p170
+ssI18610
+(dp171
+g2
+(lp172
+I18310
+asg4
+S'18-610 Fundamentals of Modern CMOS Devices'
+p173
+ssI18100
+(dp174
+g2
+(lp175
+I21120
+asg4
+S'18-100 Introduction to Electrical and Computer Engineering'
+p176
+ssI18615
+(dp177
+g2
+(lp178
+I18310
+asg4
+S'18-615 Micro and Nano Systems Fabrication'
+p179
+ssI18617
+(dp180
+g2
+(lp181
+I18320
+asg4
+S'18-617 Memory Devices and Systems'
+p182
+ssI18623
+(dp183
+g2
+(lp184
+I18321
+aI18421
+asg4
+S'18-623 Analog Integrated Circuit Design'
+p185
+ssI15050
+(dp186
+g2
+(lp187
+sg4
+S'15-050 Study Abroad'
+p188
+ssI18649
+(dp189
+g2
+(lp190
+I18348
+aI18349
+asg4
+S'18-649 Distributed Embedded Systems'
+p191
+ssI15075
+(dp192
+g2
+(lp193
+sg4
+S'15-075 Computer Science Co-Op'
+p194
+ssI15591
+(dp195
+g2
+(lp196
+sg4
+S'15-591 Independent Study in Computer Science'
+p197
+ssI15592
+(dp198
+g2
+(lp199
+sg4
+S'15-592 Independent Study in Computer Science'
+p200
+ssI15593
+(dp201
+g2
+(lp202
+sg4
+S'15-593 Independent Study in Computer Science'
+p203
+ssI15594
+(dp204
+g2
+(lp205
+sg4
+S'15-594 Independent Study in Computer Science'
+p206
+ssI15599
+(dp207
+g2
+(lp208
+sg4
+S'15-599 Undergraduate Thesis Research'
+p209
+ssI15090
+(dp210
+g2
+(lp211
+sg4
+S'15-090 Computer Science Practicum'
+p212
+ssI15610
+(dp213
+g2
+(lp214
+I15410
+asg4
+S'15-610 Engineering Distributed Systems'
+p215
+ssI15611
+(dp216
+g2
+(lp217
+I15312
+aI15213
+asg4
+S'15-611 Compiler Design'
+p218
+ssI15104
+(dp219
+g2
+(lp220
+sg4
+S'15-104 Introduction to Computing for Creative Practice'
+p221
+ssI15110
+(dp222
+g2
+(lp223
+sg4
+S'15-110 Principles of Computing'
+p224
+ssI15112
+(dp225
+g2
+(lp226
+sg4
+S'15-112 Fundamentals of Programming and Computer Science'
+p227
+ssI18391
+(dp228
+g2
+(lp229
+I36217
+aI18202
+aI18396
+aI18290
+asg4
+S'18-391 Noisy Signal Representation and Processing'
+p230
+ssI15121
+(dp231
+g2
+(lp232
+I15112
+asg4
+S'15-121 Introduction to Data Structures'
+p233
+ssI15122
+(dp234
+g2
+(lp235
+I15112
+aI21127
+aI15151
+asg4
+S'15-122 Principles of Imperative Computation'
+p236
+ssI18200
+(dp237
+g2
+(lp238
+I18100
+asg4
+S'18-200 Emerging Trends in Electrical and Computer Engineering'
+p239
+ssI15129
+(dp240
+g2
+(lp241
+sg4
+S'15-129 Freshman Immigration Course II'
+p242
+ssI18202
+(dp243
+g2
+(lp244
+I21122
+aI21123
+aI21118
+asg4
+S'18-202 Mathematical Foundations of Electrical Engineering'
+p245
+ssI15131
+(dp246
+g2
+(lp247
+sg4
+S'15-131 Great Practical Ideas for Computer Scientists'
+p248
+ssI18716
+(dp249
+g2
+(lp250
+I18715
+asg4
+S'18-716 Advanced Applied Magnetism'
+p251
+ssI18712
+(dp252
+g2
+(lp253
+I18402
+aI18300
+aI18310
+aI33439
+asg4
+S'18-712 Elements of Photonics for Communication Systems'
+p254
+ssI15749
+(dp255
+g2
+(lp256
+sg4
+S'15-749 Engineering Distributed Systems'
+p257
+ssI18213
+(dp258
+g2
+(lp259
+I15122
+aI15123
+asg4
+S'18-213 Introduction to Computer Systems'
+p260
+ssI18220
+(dp261
+g2
+(lp262
+I18202
+aI33107
+aI18100
+asg4
+S'18-220 Electronic Devices and Analog Circuits'
+p263
+ssI18482
+(dp264
+g2
+(lp265
+I73100
+asg4
+S'18-482 Telecommunications, Technology Policy & Management'
+p266
+ssI15150
+(dp267
+g2
+(lp268
+I15112
+aI21127
+aI15151
+asg4
+S'15-150 Principles of Functional Programming'
+p269
+ssI18231
+(dp270
+g2
+(lp271
+sg4
+S'18-231 Sophomore Projects'
+p272
+ssI18232
+(dp273
+g2
+(lp274
+sg4
+S'18-232 Sophomore Projects'
+p275
+ssI18240
+(dp276
+g2
+(lp277
+I18100
+aI21127
+asg4
+S'18-240 Structure and Design of Digital Systems'
+p278
+ssI18487
+(dp279
+g2
+(lp280
+I18213
+aI15214
+asg4
+S'18-487 Introduction to Computer & Network Security & Applied Cryptography'
+p281
+ssI18765
+(dp282
+g2
+(lp283
+I18240
+aI15211
+aI18340
+aI18341
+aI15214
+asg4
+S'18-765 Digital System Testing and Testable Design'
+p284
+ssI18771
+(dp285
+g2
+(lp286
+I18370
+aI18474
+asg4
+S'18-771 Linear Systems'
+p287
+ssI15705
+(dp288
+g2
+(lp289
+sg4
+S'15-705 Engineering Distributed Systems'
+p290
+ssI15199
+(dp291
+g2
+(lp292
+sg4
+S'15-199 Special Topics: Discovering Logic'
+p293
+ssI15719
+(dp294
+g2
+(lp295
+sg4
+S'15-719 Advanced Cloud Computing'
+p296
+ssI18792
+(dp297
+g2
+(lp298
+I36217
+aI18491
+aI18791
+asg4
+S'18-792 Advanced Digital Signal Processing'
+p299
+ssI15210
+(dp300
+g2
+(lp301
+I15122
+aI15150
+asg4
+S'15-210 Parallel and Sequential Data Structures and Algorithms'
+p302
+ssI15211
+(dp303
+g2
+(lp304
+I15121
+aI21127
+asg4
+S'15-211 Fundamental Data Structures and Algorithms'
+p305
+ssI15213
+(dp306
+g2
+(lp307
+I15122
+asg4
+S'15-213 Introduction to Computer Systems'
+p308
+ssI15214
+(dp309
+g2
+(lp310
+I15121
+aI15122
+aI21127
+aI15151
+asg4
+S'15-214 Principles of Software Construction: Objects, Design, and Concurrency'
+p311
+ssI18493
+(dp312
+g2
+(lp313
+I18290
+aI18220
+asg4
+S'18-493 Electroacoustics'
+p314
+ssI18290
+(dp315
+g2
+(lp316
+I18202
+aI18100
+asg4
+S'18-290 Signals and Systems'
+p317
+ssI15221
+(dp318
+g2
+(lp319
+I76101
+asg4
+S'15-221 Technical Communication for Computer Scientists'
+p320
+ssI18300
+(dp321
+g2
+(lp322
+I18220
+asg4
+S'18-300 Fundamentals of Electromagnetics'
+p323
+ssI18496
+(dp324
+g2
+(lp325
+I18290
+asg4
+S'18-496 Introduction to Biomedical Imaging and Image Analysis'
+p326
+ssI15237
+(dp327
+g2
+(lp328
+I15112
+asg4
+S'15-237 Special Topic: Cross-Platform Mobile Web Apps'
+p329
+ssI18310
+(dp330
+g2
+(lp331
+I18220
+asg4
+S'18-310 Fundamentals of Semiconductor Devices'
+p332
+ssI18320
+(dp333
+g2
+(lp334
+I18240
+aI18220
+asg4
+S'18-320 Microelectronic Circuits'
+p335
+ssI15251
+(dp336
+g2
+(lp337
+I15112
+aI21127
+aI15151
+asg4
+S'15-251 Great Theoretical Ideas in Computer Science'
+p338
+ssI18331
+(dp339
+g2
+(lp340
+sg4
+S'18-331 Junior Projects'
+p341
+ssI18332
+(dp342
+g2
+(lp343
+sg4
+S'18-332 Junior Projects'
+p344
+ssI18340
+(dp345
+g2
+(lp346
+I18240
+asg4
+S'18-340 Digital Computation'
+p347
+ssI18341
+(dp348
+g2
+(lp349
+I18240
+asg4
+S'18-341 Logic Design and Verification'
+p350
+ssI18342
+(dp351
+g2
+(lp352
+I18240
+aI18348
+aI18349
+asg4
+S'18-342 Fundamentals of Embedded Systems'
+p353
+ssI18345
+(dp354
+g2
+(lp355
+I36217
+aI36226
+aI36212
+aI18213
+asg4
+S'18-345 Introduction to Telecommunication Networks'
+p356
+ssI18348
+(dp357
+g2
+(lp358
+I18240
+aI18349
+aI18342
+aI18213
+asg4
+S'18-348 Embedded Systems Engineering'
+p359
+ssI18349
+(dp360
+g2
+(lp361
+I18240
+aI18348
+aI18213
+aI18342
+asg4
+S'18-349 Embedded Real-Time Systems'
+p362
+ssI15295
+(dp363
+g2
+(lp364
+I15122
+asg4
+S'15-295 Competition Programming and Problem Solving'
+p365
+ssI18370
+(dp366
+g2
+(lp367
+I18290
+aI18396
+asg4
+S'18-370 Fundamentals of Control'
+p368
+ssI15312
+(dp369
+g2
+(lp370
+I15210
+aI15251
+aI15212
+asg4
+S'15-312 Foundations of Programming Languages'
+p371
+ssI15313
+(dp372
+g2
+(lp373
+I15214
+asg4
+S'15-313 Foundations of Software Engineering'
+p374
+ssI15317
+(dp375
+g2
+(lp376
+I15150
+asg4
+S'15-317 Constructive Logic'
+p377
+ssI18390
+(dp378
+g2
+(lp379
+sg4
+S'18-390 ECE CO-OP'
+p380
+ssI15319
+(dp381
+g2
+(lp382
+I15213
+asg4
+S'15-319 Cloud Computing'
+p383
+ssI15321
+(dp384
+g2
+(lp385
+I15213
+asg4
+S'15-321 Research Methods for Experimental Computer Science'
+p386
+ssI15322
+(dp387
+g2
+(lp388
+I15112
+asg4
+S'15-322 Introduction to Computer Music'
+p389
+ssI15323
+(dp390
+g2
+(lp391
+I15122
+asg4
+S'15-323 Computer Music Systems and Information Processing'
+p392
+ssI18401
+(dp393
+g2
+(lp394
+I18300
+asg4
+S'18-401 Electromechanics'
+p395
+ssI18402
+(dp396
+g2
+(lp397
+I18300
+asg4
+S'18-402 Applied Electrodynamics'
+p398
+ssI18403
+(dp399
+g2
+(lp400
+I18310
+asg4
+S'18-403 Microfabrication Methods and Technology'
+p401
+ssI18513
+(dp402
+g2
+(lp403
+I18320
+aI18402
+aI18300
+asg4
+S'18-513 RF Circuits and Antennas for Wireless Systems'
+p404
+ssI18410
+(dp405
+g2
+(lp406
+I18310
+aI18311
+aI27432
+aI18321
+aI18300
+aI18303
+asg4
+S'18-410 Physical Sensors, Transducers and Instrumentation'
+p407
+ssI18411
+(dp408
+g2
+(lp409
+I21120
+aI21260
+aI21122
+aI21259
+aI15100
+asg4
+S'18-411 Computational Techniques in Engineering'
+p410
+ssI18415
+(dp411
+g2
+(lp412
+I18320
+asg4
+S"18-415 From Design to the Market for Deep Submicron IC's"
+p413
+ssI15346
+(dp414
+g2
+(lp415
+I15213
+asg4
+S'15-346 Special Topic: Perspectives in Computer Architecture'
+p416
+ssI18419
+(dp417
+g2
+(lp418
+I18310
+asg4
+S'18-419 Semiconductor Device Applications - Optoelectronics and Nanoelectronics'
+p419
+ssI15348
+(dp420
+g2
+(lp421
+I15123
+asg4
+S'15-348 Embedded Systems'
+p422
+ssI15349
+(dp423
+g2
+(lp424
+I15122
+asg4
+S'15-349 Introduction to Computer and Network Security'
+p425
+ssI15351
+(dp426
+g2
+(lp427
+I15121
+aI15122
+asg4
+S'15-351 Algorithms and Advanced Data Structures'
+p428
+ssI15354
+(dp429
+g2
+(lp430
+I15251
+aI21228
+asg4
+S'15-354 Computational Discrete Mathematics'
+p431
+ssI15355
+(dp432
+g2
+(lp433
+I15251
+asg4
+S'15-355 Modern Computer Algebra'
+p434
+ssI15359
+(dp435
+g2
+(lp436
+I21259
+aI21241
+aI15251
+asg4
+S'15-359 Probability and Computing'
+p437
+ss.
